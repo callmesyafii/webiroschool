@@ -850,6 +850,7 @@ html, body {
 }
 
 .form-content .form-button .ibtn {
+    width: 70%;
     border-radius: 6px;
     border: 0;
     padding: 6px 28px;
@@ -2023,63 +2024,34 @@ input.sm-content {
     margin-right: 550px;
 }
 
-/*
-.other-links{
-    span {
-        font-size: 15px;
-        font-weight: 300;
-        color: #fff;
-        margin-right: 20px;
-    }
-    a {
-        font-size: 12px;
-        font-weight: 700;
-        color: #fff;
-        margin-right: 10px;
-        background: none;
-        &:last-child {
-            margin-right: 0;
-        }
-        i {
-            display: inline-block;
-            width: 25px;
-            height: 25px;
-            background-color: #000;
-            color: #fff;
-            border-radius: 25px;
-            text-align: center;
-            padding-top: 5px;
-            font-size: 15px;
-            margin: 0 5px;
-            @include transition(all 0.3s ease);
-            &[class*="fa-twitter"] {
-                background-color: #00aced;
-            }
-            &[class*="fa-facebook"] {
-                background-color: #3b5998;
-            }
-            &[class*="fa-youtube"] {
-                background-color: #bb0000;
-            }
-            &[class*="fa-google"] {
-                background-color: #dd4b39;
-            }
-            &[class*="fa-linkedin"] {
-                background-color: #007bb6;
-            }
-            &[class*="fa-instagram"] {
-                background-color: #517fa4;
-            }
-            &:hover, &:focus{
-                opacity: 0.8;
-            }
-        }
-    }
-    &.social-with-title{
-
-    }
+.btn-google {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    height: 50px;
 }
-    */
+
+.btn-google i {
+    margin-right: 8px;
+}
+
+.btn-google:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
 /* -----------------------------------
     2 - Responsive Styles
 ------------------------------------*/
