@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iofrm</title>
+    <title>Login Iroschool</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
     <link rel="stylesheet" type="text/css" href="css/iofrm-style.css">
     <link rel="stylesheet" type="text/css" href="css/iofrm-theme15.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <div class="form-body">
@@ -38,19 +39,31 @@
                             <input class="form-control" type="password" name="password" placeholder="Password" required>
                             <div class="form-button">
                                 <button id="submit" type="submit" class="ibtn">Login</button> <a href="forget.html">Forget password?</a>
-                                <button class="btn-google">
-                                    <i class="fab fa-google"></i> Login with Google
-                                </button>
+                                <div id="g_id_onload"
+                                     data-client_id="292751099785-v91j970bd0v7u18n4kfl2eaceiif0gkk.apps.googleusercontent.com"
+                                     data-login_uri="http://localhost:5508/index.html"
+                                     data-auto_prompt="false">
+                                </div>
+                                <div class="g_id_signin"
+                                     data-type="standard"
+                                     data-shape="rectangular"
+                                     data-theme="outline"
+                                     data-text="sign_in_with"
+                                     data-size="large"
+                                     data-logo_alignment="left">
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+        <div id="buttonDiv"></div>
     </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/login.js"></script>
 </body>
 </html>
