@@ -40,10 +40,10 @@
                             <div class="form-button">
                                 <button id="submit" type="submit" class="ibtn">Login</button> <a href="forget.html">Forget password?</a>
                                 <div id="g_id_onload"
-                                     data-client_id="292751099785-v91j970bd0v7u18n4kfl2eaceiif0gkk.apps.googleusercontent.com"
-                                     data-login_uri="http://localhost:5500/index.html"
+                                     data-client_id="109183625335-p5vj03oh9n20joq71vkg5dl4hu44kka6.apps.googleusercontent.com"
+                                     data-callback="handleCredentialResponse"
                                      data-auto_prompt="false">
-                                </div>
+                                </div>  
                                 <div class="g_id_signin"
                                      data-type="standard"
                                      data-shape="rectangular"
@@ -64,5 +64,35 @@
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/login.js"></script>
+<script>
+function handleCredentialResponse(response) {
+    if (response.credential) {
+        console.log("Google Sign-In successful");
+        
+        // Send the credential to our server
+        fetch('/auth/google', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ credential: response.credential })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = '../index.html';
+            } else {
+                console.error('Login failed:', data.message);
+            }
+        })
+        .catch(err => {
+            console.error('Error during login:', err);
+        });
+    } else {
+        console.error("Login failed - no credential received");
+    }
+}
+</script>
 </body>
 </html>

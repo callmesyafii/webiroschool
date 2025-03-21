@@ -9,20 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const username = form.username.value;
         const password = form.password.value;
 
-        fetch('/login', {
-            method: 'POST',
-            body: JSON.stringify({ username, password }),
-            headers: { 'Content-Type': 'application/json' },
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.redirect) {
-                window.location.href = data.redirect;
-            } else {
-                // Handle login error (e.g., show an error message)
-                console.error('Login failed:', data.message);
-            }
-        })
-        .catch(error => console.error('Error:', error));
+        // For demo purposes, we'll do a simple redirect
+        // In a real application, you would validate credentials against a backend
+        if (username && password) {
+            window.location.href = '../index.html';
+        } else {
+            alert('Please enter both username and password');
+        }
     });
 });
